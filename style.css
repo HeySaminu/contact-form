@@ -1,0 +1,409 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Form styling reset */
+input,
+select,
+button,
+textarea,
+fieldset {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+
+}
+
+label {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  width: 100%;
+}
+
+@font-face {
+  font-family: 'Karla-Regular', sans-serif;
+  src: url(/assets/fonts/static/Karla-Regular.woff2) format('woff2');
+  src: url(/assets/fonts/static/Karla-Regular.woff) format('woff');
+  src: url(/assets/fonts/static/Karla-Regular.ttf) format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Karla-Bold', sans-serif;
+  src: url(/assets/fonts/static/Karla-Bold.woff2) format('woff2');
+  src: url(/assets/fonts/static/Karla-Bold.woff) format('woff');
+  src: url(/assets/fonts/static/Karla-Bold.ttf) format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  /* Colors */
+  --gray-500: hsl(186deg, 15%, 59%);
+  --gray-900: hsl(187deg, 24%, 22%);
+  --green-200: hsl(148deg, 38%, 91%);
+  --green-600: hsl(169deg, 82%, 27%);
+  --green-600-hover: hsl(169deg, 82%, 16%);
+  --white: hsl(0deg, 0%, 100%);
+  --red-error: hsl(0deg, 66%, 54%);
+  --radio-border-color: var(--gray-500);
+  --radio-checked-color: var(--green-600);
+  --radio-hover-color: var(--gray-500);
+  --radio-disabled-bg-color: #d9d9d9;
+
+  /* Typography */
+  --body-sm: 1rem;
+  --body-md: 1.125rem;
+  --heading-font-size: 2rem;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: 'Karla-Regular', sans-serif;
+  font-size: var(--body-sm);
+  background: var(--green-200);
+  margin: auto;
+  margin-inline: 1rem;
+}
+
+.main-container {
+  width: 100%;  
+  max-width: 46rem;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin: auto;
+
+  h2 {
+    color: var(--gray-900);
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1em;
+  }
+}
+
+.form-container form{ 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: var(--body-sm);
+  color: var(--gray-900);
+  margin-block-start: 2rem;
+
+  sup{
+    color: var(--green-600);
+  }
+
+  label{
+    color: var(--gray-900);
+    font-size: 1rem;
+  }
+  fieldset,
+  textarea{
+    width: 100%;
+    display: inline-flex;
+    gap: 1rem;
+  }
+  textarea{
+    margin-block-start: 0.5rem;
+  }
+}
+.form-container .form-container--inner{
+  display: flex;
+  gap: 1rem;
+}
+.form-container input:not(input[type=checkbox],input[type=radio]){
+  margin-block-start: 0.5rem;
+  width: 100%;
+}
+
+.form-message,
+.form-error {
+  display: none;
+}
+
+input,
+textarea {
+  background: #FFFFFF;
+  border: 1px solid #86A2A5;
+  border-radius: 8px;
+  padding: .75rem 1.5rem;
+  transition: border, outline, background-color, ;
+}
+
+input:hover,
+textarea:hover,
+.query-btn:hover {
+  border: 1px solid var(--green-600);
+
+}
+
+      textarea {
+        min-height: 6.563rem;
+      }
+
+input:focus,
+input:focus-within,
+input:focus-visible,
+textarea:focus,
+textarea:focus-within,
+textarea:focus-visible {
+  border: 1px solid var(--green-600);
+  outline: 1px solid var(--green-600);
+}
+     
+      .query-btn {
+        display: flex;
+        gap: 0 0.75rem;
+        align-content: center;
+        align-items: center;
+        background: var(--white);
+        border: 1px solid var(--gray-500);
+        border-radius: 8px;
+        width: 100%;
+        transition: border .3s ease-in-out;
+        padding: .75rem 1.5rem;
+        margin-block: 0.5rem;
+        cursor: pointer;
+      
+        input[type="radio"] {
+          box-sizing: border-box;
+          width: 19px;
+          height: 19px;
+          margin: 6px;
+          padding: 0;
+          border: 2px solid var(--radio-border-color);
+          border-radius: 50%;
+          appearance: none;
+          background-color: transparent;
+          outline: none;
+        }
+      
+        input[type="radio"]:not(:disabled):checked {
+          border-color: var(--radio-checked-color);
+          background-color: var(--radio-checked-color);
+          background-clip: content-box;
+          padding: 2px;
+          background-image: radial-gradient(circle,
+              var(--radio-checked-color) 0%,
+              var(--radio-checked-color) 50%,
+              transparent 60%,
+              transparent 100%);
+        }
+      
+        fieldset input[type="radio"]:checked+label {
+          background: var(--green-200);
+          border: 1px solid var(--green-600);
+        }
+      
+        input[type="radio"]:disabled {
+          background-color: var(--radio-disabled-bg-color);
+        }
+      
+        input[type="radio"]:disabled:checked {
+          background-image: radial-gradient(circle,
+              var(--radio-border-color) 0%,
+              var(--radio-border-color) 50%,
+              transparent 50%,
+              transparent 100%);
+        }
+      
+      }    
+      
+    .form-consent{
+    display: flex;
+    gap: 1rem;
+    margin-block: 1rem;
+   
+  }
+
+.submit-btn {
+  width: 100%;
+  background: var(--green-600);
+  color: var(--white);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 1rem;
+  transition: background .3s ease-in-out;
+ 
+
+}
+  .submit-btn:hover{
+    background: var(--green-600-hover);
+  }
+
+/* 
+
+.row{
+        display: flex;
+        flex-direction: ;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      input,
+      textarea {
+        background: #FFFFFF;
+        border: 1px solid #86A2A5;
+        border-radius: 8px;
+        padding: .75rem 1.5rem;
+        flex-grow: 1;
+      }
+   
+      textarea {
+        height: 100%;
+        min-height: 6.563rem;
+      }
+
+      fieldset{
+        display: inline-flex;
+        width: 100%;
+      }
+
+
+
+------------
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 1rem;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  background: #FFFFFF;
+  border: 1px solid #86A2A5;
+  border-radius: 8px;
+  width: 100%;
+  padding: .75rem 1.5rem;
+  margin-block: 0.5rem;
+}
+
+textarea {
+  height: 100%;
+  min-height: 6.563rem;
+}
+
+.query-btn {
+  display: flex;
+  gap: 0 0.75rem;
+  align-content: center;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--gray-500);
+  border-radius: 8px;
+  width: 100%;
+  padding: .75rem 1.5rem;
+  margin-block: 0.5rem;
+  cursor: pointer;
+
+  input[type="radio"] {
+    box-sizing: border-box;
+    width: 19px;
+    height: 19px;
+    margin: 6px;
+    padding: 0;
+    border: 2px solid var(--radio-border-color);
+    border-radius: 50%;
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+  }
+
+  input[type="radio"]:not(:disabled):checked {
+    border-color: var(--radio-checked-color);
+    background-color: var(--radio-checked-color);
+    background-clip: content-box;
+    padding: 2px;
+    background-image: radial-gradient(circle,
+        var(--radio-checked-color) 0%,
+        var(--radio-checked-color) 50%,
+        transparent 60%,
+        transparent 100%);
+  }
+
+  input[type="radio"]:checked.query-btn {
+    background: var(--green-200);
+    border: 1px solid var(--green-600);
+  }
+
+  input[type="radio"]:disabled {
+    background-color: var(--radio-disabled-bg-color);
+  }
+
+  input[type="radio"]:disabled:checked {
+    background-image: radial-gradient(circle,
+        var(--radio-border-color) 0%,
+        var(--radio-border-color) 50%,
+        transparent 50%,
+        transparent 100%);
+  }
+
+}
+
+.form-consent {
+  display: flex;
+  gap: 1rem;
+} */

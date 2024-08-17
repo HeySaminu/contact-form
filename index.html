@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+<link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Contact Form | Contact form</title>
+
+  
+</head>
+<body>
+  <main>
+    <div class="main-container">
+      <h2>Contact Us</h2>
+      <div class="form-container">
+        <form action="" method="post">
+          <div class="form-message"><h3>Message Sent!</h3>
+            Thanks for completing the form. We'll be in touch soon!</div>
+            <div class="form-container--inner">
+              <label for="firstname">First Name <sup>*</sup><input type="text" name="firstname" id=""><span class="form-error">This field is required</span></label>
+              <label for="lastname">  Last Name <sup>*</sup><input type="text" name="lastname" id="lastname"><span class="form-error">This field is required</span></label>
+            </div>
+              <label for="email">Email Address <sup>*</sup><input type="email" name="email" id="email" class=""><span class="form-error">Please enter a valid email address</span></label>
+  
+            <fieldset>
+            <legend>Query Type <sup>*</sup></legend>
+            <label class="query-btn" for="general-enquiry"><input type="radio" name="general-enquiry" id="general-enquiry">
+              General Enquiry </label>
+            <label class="query-btn" for="support-request"><input type="radio" name="support-request" id="support-request">
+              Support Request </label>
+            <span class="form-error">Please select a query type</span>
+          </fieldset>
+            <label for=""> Message <sup>*</sup><textarea rows="" name="messsage" id="Message"></textarea></label>
+            <div class="form-consent">
+            <input type="checkbox" name="consent" id="consent" >
+            <label for="consent">I consent to being contacted by the team *<span class="form-error">To submit this form, please consent to being contacted</span></label>
+            </div>
+          
+          <div class="submit-btn" name="submit" id="submit">Submit</div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="https://saminu.vzy.io/">Saminu</a>.
+  </div> -->
+</body>
+</html>
