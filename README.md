@@ -3,6 +3,7 @@
 ![Design preview for the Contact form coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
+### Hi
 
 Thanks for checking out this front-end coding challenge.
 
