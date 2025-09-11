@@ -71,24 +71,28 @@ p {
 }
 
 @layer form {
+    
   .form-wrapper {
+    width: 100%;
     max-width: 46rem;
     padding: 1.5rem;
     background-color: var(--white);
     border-radius: 16px;
+     @media (width > 560px) {
+      padding: 2.5rem;
+    }
   }
 
   h1 {
     color: var(--gray-900);
     font-size: var(--heading-font-size);
     letter-spacing: -1px;
-    /* padding-block-end: 2rem; */
   }
 
   form {
     display: grid;
     gap: 1rem;
-    font: inherit;
+    
     @media (width > 560px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -131,9 +135,11 @@ p {
     border: 1px solid var(--gray-500);
     border-radius: 6px;
     padding: .75rem 1.5rem;
-
-    &:focus-visible {
-      border: 1px solid var(--green-600);
+    font-family: inherit;
+    font-size: var(--body-md);
+    color: var(--gray-900);
+    &:focus-visible,
+    &:hover:not([type="radio"], [type="checkbox"]) {
       outline: 1px solid var(--green-600);
     }
 
@@ -167,13 +173,15 @@ p {
   button {
     background-color: var(--green-600);
     color: var(--white);
+    font-size: var(--body-md);
+    font-weight: bold;
     border: none;
     border-radius: 8px;
-    padding: .75rem 1.5rem;
+    padding: 1rem 1.5rem;
     transition: background .3s ease;
+    cursor: pointer;
 
-    &:hover,
-    &:focus-visible {
+    &:hover{
       background-color: var(--green-600-hover);
     }
   }
