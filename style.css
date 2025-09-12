@@ -98,9 +98,13 @@ p {
     
     @media (width > 560px) {
       grid-template-columns: repeat(2, 1fr);
+      row-gap: 1.5rem;
     }
   }
-
+.form-group:has(input[type="checkbox"]){
+  margin-block: 1rem;
+  
+}
   fieldset {
     border: none;
     padding: 0;
@@ -111,9 +115,10 @@ p {
   }
 
   textarea {
-    height: 3lh;
+    height: 3.8lh;
     box-sizing: content-box;
     resize: block;
+    align-content: center;
   }
 
   .form-group {
@@ -184,6 +189,7 @@ p {
     gap: 1ch;
     &:has([type="checkbox"]){
       flex-direction: column;
+
     }
   }
 
@@ -205,6 +211,21 @@ p {
 
     &:hover{
       background-color: var(--green-600-hover);
+    }
+  }
+}
+
+.attribution{
+  text-align: center;
+  padding-block: 16px;
+
+  a{
+    color: var(--green-600);
+    text-decoration: none;
+    transition: text-decoration .3s ease, color .3s ease;
+    &:hover{
+      text-decoration: underline;
+      color: var(--green-600-hover);
     }
   }
 }
