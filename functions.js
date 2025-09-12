@@ -183,13 +183,5 @@ consent.addEventListener("change", () => validateConsent(consent));
 
   if (!okFirst || !okLast || !okEmail || !okQuery || !okMessage || !okConsent) {
     e.preventDefault();
-
-    // Optional: focus the first invalid thing, in a sensible order
-    if      (!okFirst)   fname.focus();
-    else if (!okLast)    lname.focus();
-    else if (!okEmail)   email.focus();
-    else if (!okQuery)   document.querySelector('input[name="query"]').focus();
-    else if (!okMessage) message.focus();
-    else if (!okConsent) consent.focus();
   }
 });
