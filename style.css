@@ -33,7 +33,7 @@
   --green-600: hsl(169deg, 82%, 27%);
   --green-600-hover: hsl(169deg, 82%, 16%);
   --white: hsl(0deg, 0%, 100%);
-  --red-error: hsl(0deg, 66%, 54%);
+  --red: hsl(0deg, 66%, 54%);
   --radio-border-color: var(--gray-500);
   --radio-checked-color: var(--green-600);
   --radio-hover-color: var(--gray-500);
@@ -42,7 +42,7 @@
   /* Typography */
   --body-sm: 1rem;
   --body-md: 1.125rem;
-  --heading-font-size: 2rem;
+  --fs-heading: 2rem;
 }
 
 body {
@@ -54,7 +54,8 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  margin:0;
 
 }
 
@@ -62,6 +63,7 @@ h1,
 h2,
 p {
   margin-block: 0;
+
 }
 
 @layer layout {
@@ -85,8 +87,9 @@ p {
 
   h1 {
     color: var(--gray-900);
-    font-size: var(--heading-font-size);
+    font: bold var(--fs-heading)/1 'Karla-Bold', sans-serif;
     letter-spacing: -1px;
+    padding-block-end: 1.5rem;
   }
 
   form {
@@ -116,6 +119,14 @@ p {
   .form-group {
     display: grid;
   }
+.error-msg{
+  display: block;
+}
+  .form-group .error-msg,
+  fieldset .error-msg  {
+    color: var(--red);
+    font-size: var(--body-sm)
+  }
 
   fieldset:has([required]) legend,
   .form-group:has(:not([type="radio"], [type="checkbox"])[required]) label {
@@ -142,8 +153,16 @@ p {
     &:hover:not([type="radio"], [type="checkbox"]) {
       outline: 1px solid var(--green-600);
     }
-
+     &:focus-visible[aria-invalid="true"],
+     &:hover[aria-invalid="true"] {
+      outline: 0;
   }
+}
+
+  input[aria-invalid="true"],
+  textarea[aria-invalid="true"]{
+      border-color:var(--red);
+    }
 
   [type="radio"],
   [type="checkbox"] {
@@ -160,9 +179,12 @@ p {
     }
   }
 
-  .form-group:has([type="radio"], [type="checkbox"]) {
+  .form-group:has([type="radio"]) {
     display: flex;
     gap: 1ch;
+    &:has([type="checkbox"]){
+      flex-direction: column;
+    }
   }
 
   .form-group:has([type="radio"]:checked) {
